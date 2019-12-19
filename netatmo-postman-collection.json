@@ -1,0 +1,827 @@
+{
+    "id": "ff07a60bc4260e037fbe051bafb4860d",
+    "name": "Netatmo",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "a8e86e410c57be724df86fd0feeeaab5",
+            "name": "Get Addwebhook",
+            "url": "httpsapi.netatmo.net\/api\/addwebhook",
+            "description": "Links a callback url to a user.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "url",
+                    "description": "Your webhook callback url",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "app_type",
+                    "description": "Webhooks are only available for Welcome, enter app_camera.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "rawModeData": ""
+        },
+        {
+            "id": "56eab4fa42d5524ffe2c47329fb2ad31",
+            "name": "Post Createnewschedule",
+            "url": "httpsapi.netatmo.net\/api\/createnewschedule",
+            "description": "The method createnewschedule creates a new schedule stored in the backup list.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "device_id",
+                    "description": "The relay id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "module_id",
+                    "description": "The thermostat id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "therm_program",
+                    "description": "The thermostat program (zones and timetable)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "rawModeData": ""
+        },
+        {
+            "id": "210f8c0947a5f8de398d4b63ed6f48b6",
+            "name": "Get Devicelist",
+            "url": "httpsapi.netatmo.net\/api\/devicelist",
+            "description": "The method devicelist returns the list of devices owned by the user, and their modules.\nA device is identified by its _id (which is its mac address) and each device may have one, several or no modules, also identified by an _id.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "app_type",
+                    "description": "Webhooks are only available for Welcome, enter app_camera.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "device_id",
+                    "description": "The relay id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "get_favorites",
+                    "description": "When set to \"true\", the favorite devices of the user are returned. This flag is available only if the devices requested are Weather Stations.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "rawModeData": ""
+        },
+        {
+            "id": "28a4539b512a9204f32914e07a76d5a5",
+            "name": "Get Dropwebhook",
+            "url": "httpsapi.netatmo.net\/api\/dropwebhook",
+            "description": "Dissociates a webhook from a user.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "app_type",
+                    "description": "Webhooks are only available for Welcome, enter app_camera.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "rawModeData": ""
+        },
+        {
+            "id": "3bf1e75681e4a99e2bd50b6eab9555a1",
+            "name": "Get Getcamerapicture",
+            "url": "httpsapi.netatmo.net\/api\/getcamerapicture",
+            "description": "Returns the snapshot associated to an event.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "image_id",
+                    "description": "id of the image (can be retrieved as 'id' in 'face' in Gethomedata, or as 'id' in 'snapshot' in Getnextevents, Getlasteventof and Geteventsuntil)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "key",
+                    "description": "Security key to access snapshots.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "rawModeData": ""
+        },
+        {
+            "id": "c9d22d423268e879814b6d5af7fca90d",
+            "name": "Get Geteventsuntil",
+            "url": "httpsapi.netatmo.net\/api\/geteventsuntil",
+            "description": "Returns the snapshot associated to an event.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "home_id",
+                    "description": "ID of the Home you're interested in",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "event_id",
+                    "description": "Your request will retrieve all the events until this one",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "rawModeData": ""
+        },
+        {
+            "id": "68b4410aa35d33b7d79757c57b049df2",
+            "name": "Get Gethomecoachsdata",
+            "url": "httpsapi.netatmo.net\/api\/gethomecoachsdata",
+            "description": "The method gethomecoachsdata Returns data from a user Healthy Home Coach Station (measures and device specific data).",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "device_id",
+                    "description": "The relay id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "rawModeData": ""
+        },
+        {
+            "id": "307ecfda8f2db35d72dbbcc12497244a",
+            "name": "Get Gethomedata",
+            "url": "httpsapi.netatmo.net\/api\/gethomedata",
+            "description": "Returns information about users homes and cameras.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "home_id",
+                    "description": "ID of the Home you're interested in",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "size",
+                    "description": "Number of events to retrieve. Default is 30.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "rawModeData": ""
+        },
+        {
+            "id": "b1c96f5cfd8f7a0a19e2b7fa28d2c023",
+            "name": "Get Getlasteventof",
+            "url": "httpsapi.netatmo.net\/api\/getlasteventof",
+            "description": "Returns most recent events.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "home_id",
+                    "description": "ID of the Home you're interested in",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "person_id",
+                    "description": "Your request will retrieve all events of the given home until the most recent event of the given person",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "offset",
+                    "description": "Number of events to retrieve. Default is 30.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "rawModeData": ""
+        },
+        {
+            "id": "5530ddf56f069fab33562aa70d2ae9d6",
+            "name": "Get Getmeasure",
+            "url": "httpsapi.netatmo.net\/api\/getmeasure",
+            "description": "The method getmeasure returns the measurements of a device or a module.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "device_id",
+                    "description": "The relay id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "module_id",
+                    "description": "The thermostat id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "scale",
+                    "description": "Defines the time interval between two measurements.\nPossible values :\nmax -> every value stored will be returned\n30min -> 1 value every 30 minutes\n1hour -> 1 value every hour\n3hours -> 1 value every 3 hours\n1day -> 1 value per day\n1week -> 1 value per week\n1month -> 1 value per month\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "type",
+                    "description": "Sets the type of measurement you want to retrieve.\nThe different types of measurements must be given in a comma separated list of strings.\nExample: type=\"Temperature,Humidity\"\nDepending on the device's type and the scale, different measurements are available:\nFor Weather Station :\n\n  max -> Temperature, CO2, Humidity, Pressure, Noise, Rain (if\nmodule_id is a rain sensor)\n\n  30min, 1hour, 3hours -> Temperature, CO2, Humidity, Pressure,\nNoise, min_temp, max_temp, min_hum, max_hum, min_pressure, ma",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "date_begin",
+                    "description": "Starting timestamp (utc) of the requested measurements.\nPlease note measurement retrieving is limited to 1024 measurements. \n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "date_end",
+                    "description": "Ending timestamp (utc) of the request measurements.\nIf you want only the last measurement, do not provide date_begin, and set date_end to \"last\". \n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "Limits the number of measurements returned (default & max is 1024)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "optimize",
+                    "description": "Allows you to choose the format of the answer.\nIf you build a mobile app and bandwith usage is an issue, use optimize = true.\nUse optimize = false, for an easier parse. In this case, values are indexed by sorted timestamp.\nExample of un-optimized response :\n{\"status\": \"ok\", \n  \"body\": {\n    \"1347575400\": [18.3,39],\n    \"1347586200\": [20.6,48]\n  },\n\"time_exec\": 0.012136936187744}\nIf optimize is set true, measurements are returned as an array of series of regularly spaced measurements. Each series",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "real_time",
+                    "description": "In scales higher than max, since the data is aggregated, the timestamps returned are by default offset by +(scale\/2).\nFor instance, if you ask for measurements at a daily scale, you will receive data timestamped at 12:00 if real_time is set to false (default case), and timestamped at 00:00 if real_time is set to true.\nNB : The servers always store data with real_time set to true and data are offset by this parameter AFTER having being time-filtered, thus you could have data after date_end if rea",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "rawModeData": ""
+        },
+        {
+            "id": "871221100d758efc9ee91bd5cb43150c",
+            "name": "Get Getnextevents",
+            "url": "httpsapi.netatmo.net\/api\/getnextevents",
+            "description": "Returns previous events.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "home_id",
+                    "description": "ID of the Home you're interested in",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "event_id",
+                    "description": "Your request will retrieve all the events until this one",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "size",
+                    "description": "Number of events to retrieve. Default is 30.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "rawModeData": ""
+        },
+        {
+            "id": "b50704eb277c4beb2c5233260e1fbc66",
+            "name": "Get Getstationsdata",
+            "url": "httpsapi.netatmo.net\/api\/getstationsdata",
+            "description": "The method getstationsdata Returns data from a user Weather Stations (measures and device specific data).",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "device_id",
+                    "description": "The relay id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "rawModeData": ""
+        },
+        {
+            "id": "77196aef42b84a091fd08d2d1931f9ab",
+            "name": "Get Getthermostatsdata",
+            "url": "httpsapi.netatmo.net\/api\/getthermostatsdata",
+            "description": "The method getthermostatsdata returns information about user's thermostats such as their last measurements.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "device_id",
+                    "description": "The relay id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "rawModeData": ""
+        },
+        {
+            "id": "366094ae4084822cd2961bb5d52ff5c9",
+            "name": "Get Getthermstate",
+            "url": "httpsapi.netatmo.net\/api\/getthermstate",
+            "description": "The method getthermstate returns the last Thermostat measurements, its current weekly schedule, and, if present, its current manual temperature setpoint.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "device_id",
+                    "description": "The relay id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "module_id",
+                    "description": "The thermostat id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "rawModeData": ""
+        },
+        {
+            "id": "9aaeb6b499d4ec37564fcc59aba2d051",
+            "name": "Get Getuser",
+            "url": "httpsapi.netatmo.net\/api\/getuser",
+            "description": "The method getuser returns information about a user such as prefered language, prefered units, and list of devices.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "rawModeData": ""
+        },
+        {
+            "id": "cb7f94f8b8b96f566627d94992dc52f1",
+            "name": "Get Partnerdevices",
+            "url": "httpsapi.netatmo.net\/api\/partnerdevices",
+            "description": "The method partnerdevices returns the list of device_id to which your partner application has access to.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "rawModeData": ""
+        },
+        {
+            "id": "d57c752da05dcb7e7d4ad24cef64cfd7",
+            "name": "Get Setpersonsaway",
+            "url": "httpsapi.netatmo.net\/api\/setpersonsaway",
+            "description": "Sets a person as 'Away' or the Home as 'Empty'. The event will be added to the user???s timeline.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "home_id",
+                    "description": "ID of the Home you're interested in",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "person_id",
+                    "description": "Your request will retrieve all events of the given home until the most recent event of the given person",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "rawModeData": ""
+        },
+        {
+            "id": "4c126221506d8d86d9487a58b8abffb2",
+            "name": "Post Setthermpoint",
+            "url": "httpsapi.netatmo.net\/api\/setthermpoint",
+            "description": "The method setthermpoint changes the Thermostat manual temperature setpoint.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "device_id",
+                    "description": "The relay id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "module_id",
+                    "description": "The thermostat id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "setpoint_mode",
+                    "description": "Chosen setpoint_mode",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "setpoint_endtime",
+                    "description": "When using the manual or max setpoint_mode, this parameter defines when the setpoint expires.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "setpoint_temp",
+                    "description": "When using the manual setpoint_mode, this parameter defines the temperature setpoint (in Celcius) to use.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "rawModeData": ""
+        },
+        {
+            "id": "aac2b7f2ca8a21d0587d64856c1cbc1f",
+            "name": "Post Switchschedule",
+            "url": "httpsapi.netatmo.net\/api\/switchschedule",
+            "description": "The method switchschedule switches the Thermostat's schedule to another existing schedule.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "device_id",
+                    "description": "The relay id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "module_id",
+                    "description": "The thermostat id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "schedule_id",
+                    "description": "The schedule id. It can be found in the getthermstate response, under the keys \"therm_program_backup\" and \"therm_program\".\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "rawModeData": ""
+        },
+        {
+            "id": "00a2562d5573b6a78885e46c706e35bd",
+            "name": "Post Syncschedule",
+            "url": "httpsapi.netatmo.net\/api\/syncschedule",
+            "description": "The method syncschedule changes the Thermostat weekly schedule.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "device_id",
+                    "description": "The relay id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "module_id",
+                    "description": "The thermostat id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "therm_program",
+                    "description": "The thermostat program (zones and timetable)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "rawModeData": ""
+        }
+    ]
+}
