@@ -1,0 +1,1988 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.1.1",
+        "title": "Netatmo",
+        "description": "We develop groundbreaking, intuitive and beautifully-designed connected consumer electronics. Truly smart, our innovative products provide a seamless experience that helps users create a safer, healthier and more comfortable home.  We carefully design the mechanics, electronics and embedded software of all our products to the highest standards. Our mobile and web applications are designed to be simple to operate, yet deliver a rich user experience.",
+        "termsOfService": "https:\/\/dev.netatmo.com\/dev\/resources\/legal\/introduction"
+    },
+    "servers": [
+        "httpsapi.netatmo.net\/api"
+    ],
+    "paths": {
+        "\/addwebhook": {
+            "get": {
+                "summary": "Get Addwebhook",
+                "description": "Links a callback url to a user.\n",
+                "operationId": "Addwebhook",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "Your webhook callback url"
+                    },
+                    {
+                        "name": "app_type",
+                        "in": "query",
+                        "description": "Webhooks are only available for Welcome, enter app_camera."
+                    }
+                ]
+            }
+        },
+        "\/createnewschedule": {
+            "post": {
+                "summary": "Post Createnewschedule",
+                "description": "The method createnewschedule creates a new schedule stored in the backup list.",
+                "operationId": "Createnewschedule",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "device_id",
+                        "in": "query",
+                        "description": "The relay id"
+                    },
+                    {
+                        "name": "module_id",
+                        "in": "query",
+                        "description": "The thermostat id"
+                    },
+                    {
+                        "name": "therm_program",
+                        "in": "body",
+                        "description": "The thermostat program (zones and timetable)"
+                    }
+                ]
+            }
+        },
+        "\/devicelist": {
+            "get": {
+                "summary": "Get Devicelist",
+                "description": "The method devicelist returns the list of devices owned by the user, and their modules.\nA device is identified by its _id (which is its mac address) and each device may have one, several or no modules, also identified by an _id.\n",
+                "operationId": "Devicelist",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "app_type",
+                        "in": "query",
+                        "description": "Webhooks are only available for Welcome, enter app_camera."
+                    },
+                    {
+                        "name": "device_id",
+                        "in": "query",
+                        "description": "The relay id"
+                    },
+                    {
+                        "name": "get_favorites",
+                        "in": "query",
+                        "description": "When set to \"true\", the favorite devices of the user are returned. This flag is available only if the devices requested are Weather Stations."
+                    }
+                ]
+            }
+        },
+        "\/dropwebhook": {
+            "get": {
+                "summary": "Get Dropwebhook",
+                "description": "Dissociates a webhook from a user.\n",
+                "operationId": "Dropwebhook",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "app_type",
+                        "in": "query",
+                        "description": "Webhooks are only available for Welcome, enter app_camera."
+                    }
+                ]
+            }
+        },
+        "\/getcamerapicture": {
+            "get": {
+                "summary": "Get Getcamerapicture",
+                "description": "Returns the snapshot associated to an event.\n",
+                "operationId": "Getcamerapicture",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "image_id",
+                        "in": "query",
+                        "description": "id of the image (can be retrieved as 'id' in 'face' in Gethomedata, or as 'id' in 'snapshot' in Getnextevents, Getlasteventof and Geteventsuntil)"
+                    },
+                    {
+                        "name": "key",
+                        "in": "query",
+                        "description": "Security key to access snapshots."
+                    }
+                ]
+            }
+        },
+        "\/geteventsuntil": {
+            "get": {
+                "summary": "Get Geteventsuntil",
+                "description": "Returns the snapshot associated to an event.\n",
+                "operationId": "Geteventsuntil",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "home_id",
+                        "in": "query",
+                        "description": "ID of the Home you're interested in"
+                    },
+                    {
+                        "name": "event_id",
+                        "in": "query",
+                        "description": "Your request will retrieve all the events until this one"
+                    }
+                ]
+            }
+        },
+        "\/gethomecoachsdata": {
+            "get": {
+                "summary": "Get Gethomecoachsdata",
+                "description": "The method gethomecoachsdata Returns data from a user Healthy Home Coach Station (measures and device specific data).",
+                "operationId": "Gethomecoachsdata",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "device_id",
+                        "in": "query",
+                        "description": "The relay id"
+                    }
+                ]
+            }
+        },
+        "\/gethomedata": {
+            "get": {
+                "summary": "Get Gethomedata",
+                "description": "Returns information about users homes and cameras.\n",
+                "operationId": "Gethomedata",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "home_id",
+                        "in": "query",
+                        "description": "ID of the Home you're interested in"
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "Number of events to retrieve. Default is 30."
+                    }
+                ]
+            }
+        },
+        "\/getlasteventof": {
+            "get": {
+                "summary": "Get Getlasteventof",
+                "description": "Returns most recent events.\n",
+                "operationId": "Getlasteventof",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "home_id",
+                        "in": "query",
+                        "description": "ID of the Home you're interested in"
+                    },
+                    {
+                        "name": "person_id",
+                        "in": "query",
+                        "description": "Your request will retrieve all events of the given home until the most recent event of the given person"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Number of events to retrieve. Default is 30."
+                    }
+                ]
+            }
+        },
+        "\/getmeasure": {
+            "get": {
+                "summary": "Get Getmeasure",
+                "description": "The method getmeasure returns the measurements of a device or a module.\n",
+                "operationId": "Getmeasure",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "device_id",
+                        "in": "query",
+                        "description": "The relay id"
+                    },
+                    {
+                        "name": "module_id",
+                        "in": "query",
+                        "description": "The thermostat id"
+                    },
+                    {
+                        "name": "scale",
+                        "in": "query",
+                        "description": "Defines the time interval between two measurements.\nPossible values :\nmax -> every value stored will be returned\n30min -> 1 value every 30 minutes\n1hour -> 1 value every hour\n3hours -> 1 value every 3 hours\n1day -> 1 value per day\n1week -> 1 value per week\n1month -> 1 value per month\n"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "Sets the type of measurement you want to retrieve.\nThe different types of measurements must be given in a comma separated list of strings.\nExample: type=\"Temperature,Humidity\"\nDepending on the device's type and the scale, different measurements are available:\nFor Weather Station :\n\n  max -> Temperature, CO2, Humidity, Pressure, Noise, Rain (if\nmodule_id is a rain sensor)\n\n  30min, 1hour, 3hours -> Temperature, CO2, Humidity, Pressure,\nNoise, min_temp, max_temp, min_hum, max_hum, min_pressure, ma"
+                    },
+                    {
+                        "name": "date_begin",
+                        "in": "query",
+                        "description": "Starting timestamp (utc) of the requested measurements.\nPlease note measurement retrieving is limited to 1024 measurements. \n"
+                    },
+                    {
+                        "name": "date_end",
+                        "in": "query",
+                        "description": "Ending timestamp (utc) of the request measurements.\nIf you want only the last measurement, do not provide date_begin, and set date_end to \"last\". \n"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Limits the number of measurements returned (default & max is 1024)"
+                    },
+                    {
+                        "name": "optimize",
+                        "in": "query",
+                        "description": "Allows you to choose the format of the answer.\nIf you build a mobile app and bandwith usage is an issue, use optimize = true.\nUse optimize = false, for an easier parse. In this case, values are indexed by sorted timestamp.\nExample of un-optimized response :\n{\"status\": \"ok\", \n  \"body\": {\n    \"1347575400\": [18.3,39],\n    \"1347586200\": [20.6,48]\n  },\n\"time_exec\": 0.012136936187744}\nIf optimize is set true, measurements are returned as an array of series of regularly spaced measurements. Each series"
+                    },
+                    {
+                        "name": "real_time",
+                        "in": "query",
+                        "description": "In scales higher than max, since the data is aggregated, the timestamps returned are by default offset by +(scale\/2).\nFor instance, if you ask for measurements at a daily scale, you will receive data timestamped at 12:00 if real_time is set to false (default case), and timestamped at 00:00 if real_time is set to true.\nNB : The servers always store data with real_time set to true and data are offset by this parameter AFTER having being time-filtered, thus you could have data after date_end if rea"
+                    }
+                ]
+            }
+        },
+        "\/getnextevents": {
+            "get": {
+                "summary": "Get Getnextevents",
+                "description": "Returns previous events.\n",
+                "operationId": "Getnextevents",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "home_id",
+                        "in": "query",
+                        "description": "ID of the Home you're interested in"
+                    },
+                    {
+                        "name": "event_id",
+                        "in": "query",
+                        "description": "Your request will retrieve all the events until this one"
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "Number of events to retrieve. Default is 30."
+                    }
+                ]
+            }
+        },
+        "\/getstationsdata": {
+            "get": {
+                "summary": "Get Getstationsdata",
+                "description": "The method getstationsdata Returns data from a user Weather Stations (measures and device specific data).",
+                "operationId": "Getstationsdata",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "device_id",
+                        "in": "query",
+                        "description": "The relay id"
+                    }
+                ]
+            }
+        },
+        "\/getthermostatsdata": {
+            "get": {
+                "summary": "Get Getthermostatsdata",
+                "description": "The method getthermostatsdata returns information about user's thermostats such as their last measurements.",
+                "operationId": "Getthermostatsdata",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "device_id",
+                        "in": "query",
+                        "description": "The relay id"
+                    }
+                ]
+            }
+        },
+        "\/getthermstate": {
+            "get": {
+                "summary": "Get Getthermstate",
+                "description": "The method getthermstate returns the last Thermostat measurements, its current weekly schedule, and, if present, its current manual temperature setpoint.",
+                "operationId": "Getthermstate",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "device_id",
+                        "in": "query",
+                        "description": "The relay id"
+                    },
+                    {
+                        "name": "module_id",
+                        "in": "query",
+                        "description": "The thermostat id"
+                    }
+                ]
+            }
+        },
+        "\/getuser": {
+            "get": {
+                "summary": "Get Getuser",
+                "description": "The method getuser returns information about a user such as prefered language, prefered units, and list of devices.\n",
+                "operationId": "Getuser",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/partnerdevices": {
+            "get": {
+                "summary": "Get Partnerdevices",
+                "description": "The method partnerdevices returns the list of device_id to which your partner application has access to.",
+                "operationId": "Partnerdevices",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/setpersonsaway": {
+            "get": {
+                "summary": "Get Setpersonsaway",
+                "description": "Sets a person as 'Away' or the Home as 'Empty'. The event will be added to the user???s timeline.\n",
+                "operationId": "Setpersonsaway",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "home_id",
+                        "in": "query",
+                        "description": "ID of the Home you're interested in"
+                    },
+                    {
+                        "name": "person_id",
+                        "in": "query",
+                        "description": "Your request will retrieve all events of the given home until the most recent event of the given person"
+                    }
+                ]
+            }
+        },
+        "\/setthermpoint": {
+            "post": {
+                "summary": "Post Setthermpoint",
+                "description": "The method setthermpoint changes the Thermostat manual temperature setpoint.",
+                "operationId": "Setthermpoint",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "device_id",
+                        "in": "query",
+                        "description": "The relay id"
+                    },
+                    {
+                        "name": "module_id",
+                        "in": "query",
+                        "description": "The thermostat id"
+                    },
+                    {
+                        "name": "setpoint_mode",
+                        "in": "query",
+                        "description": "Chosen setpoint_mode"
+                    },
+                    {
+                        "name": "setpoint_endtime",
+                        "in": "query",
+                        "description": "When using the manual or max setpoint_mode, this parameter defines when the setpoint expires."
+                    },
+                    {
+                        "name": "setpoint_temp",
+                        "in": "query",
+                        "description": "When using the manual setpoint_mode, this parameter defines the temperature setpoint (in Celcius) to use."
+                    }
+                ]
+            }
+        },
+        "\/switchschedule": {
+            "post": {
+                "summary": "Post Switchschedule",
+                "description": "The method switchschedule switches the Thermostat's schedule to another existing schedule.",
+                "operationId": "Switchschedule",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "device_id",
+                        "in": "query",
+                        "description": "The relay id"
+                    },
+                    {
+                        "name": "module_id",
+                        "in": "query",
+                        "description": "The thermostat id"
+                    },
+                    {
+                        "name": "schedule_id",
+                        "in": "query",
+                        "description": "The schedule id. It can be found in the getthermstate response, under the keys \"therm_program_backup\" and \"therm_program\".\n"
+                    }
+                ]
+            }
+        },
+        "\/syncschedule": {
+            "post": {
+                "summary": "Post Syncschedule",
+                "description": "The method syncschedule changes the Thermostat weekly schedule.",
+                "operationId": "Syncschedule",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "device_id",
+                        "in": "query",
+                        "description": "The relay id"
+                    },
+                    {
+                        "name": "module_id",
+                        "in": "query",
+                        "description": "The thermostat id"
+                    },
+                    {
+                        "name": "therm_program",
+                        "in": "body",
+                        "description": "The thermostat program (zones and timetable)"
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "NADashboardData": {
+                "type": "object",
+                "properties": {
+                    "AbsolutePressure": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "BoilerOff": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "BoilerOn": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "CO2": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "GustAngle": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "GustStrength": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "Humidity": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "Noise": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "Pressure": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "Rain": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "Temperature": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "WindAngle": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "WindStrength": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "date_max_temp": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "date_min_temp": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "device_id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "health_idx": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "max_temp": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "min_temp": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "pressure_trend": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "sum_rain_1": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "sum_rain_24": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "temp_trend": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_utc": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NADate": {
+                "type": "object",
+                "properties": {
+                    "sec": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "usec": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NADevice": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "behavior": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "cipher_id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "data_type": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "firmware": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "first_pid_avail": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "hw_version": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "ip": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "last_fw_update": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "last_radio_store": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "last_status_store": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "last_upgrade": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "module_name": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "modules": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "new_feature_avail": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "public_ext_data": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "setpoint": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "setpoint_default_duration": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "setpoint_order": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "station_name": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "therm_program": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "therm_program_backup": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "therm_program_order": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "udp_conn": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "user_owner": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "wifi_status": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NADeviceListBody": {
+                "type": "object",
+                "properties": {
+                    "devices": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "modules": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NADeviceListResponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_exec": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_server": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAHealthyHomeCoach": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "cipher_id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "co2_calibrating": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "data_type": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "date_setup": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "firmware": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "last_setup": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "last_status_store": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "last_upgrade": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "wifi_status": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAHealthyHomeCoachDataBody": {
+                "type": "object",
+                "properties": {
+                    "devices": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAHealthyHomeCoachDataResponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_exec": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_server": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAHeatingSystem": {
+                "type": "object",
+                "properties": {
+                    "heating_energy": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "heating_system_window_seen": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAHouseModel": {
+                "type": "object",
+                "properties": {
+                    "algo_type": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "ext_temps": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "first_anticipate_avail": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "first_pid_avail": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "in_use": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "prefered_algo_type": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "station_firsttime_anticipate": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_algo_changed": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_pid_computed": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAHouseModelCa": {
+                "type": "object",
+                "properties": {
+                    "so": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "te": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "ti": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NALinkStation": {
+                "type": "object",
+                "properties": {
+                    "Temperature": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "ext": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "mac": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAMain": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "cipher_id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "co2_calibrating": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "data_type": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "date_setup": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "firmware": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "last_setup": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "last_status_store": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "last_upgrade": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "module_name": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "modules": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "station_name": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "wifi_status": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAMeasureBodyElem": {
+                "type": "object",
+                "properties": {
+                    "beg_time": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "step_time": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "value": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAMeasureResponse": {
+                "type": "object",
+                "properties": {
+                    "body": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_exec": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_server": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAModule": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "battery_vp": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "data_type": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "firmware": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "last_message": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "last_seen": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "main_device": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "module_name": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "public_ext_data": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "rf_status": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "therm_orientation": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "therm_relay_cmd": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NANewScheduleBody": {
+                "type": "object",
+                "properties": {
+                    "schedule_id": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NANewScheduleResponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_exec": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_server": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAObject": {
+                "type": "object",
+                "properties": {
+                    "$id": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAOkResponse": {
+                "type": "object",
+                "properties": {
+                    "body": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_exec": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_server": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAPartnerDevicesResponse": {
+                "type": "object",
+                "properties": {
+                    "body": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_exec": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_server": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAPidAlgo": {
+                "type": "object",
+                "properties": {
+                    "gain": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "period": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "td": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "ti": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAPlace": {
+                "type": "object",
+                "properties": {
+                    "altitude": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "city": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "country": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "from_ip": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "improveLocProposed": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "location": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "timezone": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "trust_location": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAPlug": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "firmware": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "last_plug_seen": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "last_status_store": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "modules": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "plug_connected_boiler": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "station_name": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "syncing": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "udp_conn": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "wifi_status": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NASetpoint": {
+                "type": "object",
+                "properties": {
+                    "setpoint_endtime": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "setpoint_mode": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "setpoint_temp": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NASetpointLog": {
+                "type": "object",
+                "properties": {
+                    "timestamp": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NASimpleAlgo": {
+                "type": "object",
+                "properties": {
+                    "high_deadband": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAStation": {
+                "type": "object",
+                "properties": {
+                    "lag_down": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "lag_up": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "off_overshoot": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "on_overshoot": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "pk": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "tau": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAStationDataBody": {
+                "type": "object",
+                "properties": {
+                    "devices": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAStationDataResponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_exec": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_server": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAStationModule": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "battery_percent": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "battery_vp": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "data_type": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "firmware": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "last_message": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "last_seen": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "last_setup": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "module_name": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "rf_status": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAThermMeasure": {
+                "type": "object",
+                "properties": {
+                    "setpoint_temp": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "Temperature": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAThermProgram": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "program_id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "selected": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "timetable": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "zones": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAThermStateBody": {
+                "type": "object",
+                "properties": {
+                    "battery_vp": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "last_plug_seen": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "last_therm_seen": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "plug_connected_boiler": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "rf_status": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "therm_orientation": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "therm_program_backup": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "therm_relay_cmd": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "udp_conn": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "wifi_status": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAThermStateResponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_exec": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_server": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAThermostat": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "battery_vp": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "firmware": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "last_message": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "last_therm_seen": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "module_name": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "rf_status": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "setpoint_history": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "therm_orientation": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "therm_program_list": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "therm_relay_cmd": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAThermostatDataBody": {
+                "type": "object",
+                "properties": {
+                    "devices": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAThermostatDataResponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_exec": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_server": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NATimeTableItem": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "m_offset": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAUser": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "devices": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "friend_devices": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "mail": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "timeline_not_read": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "timeline_size": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAUserAdministrative": {
+                "type": "object",
+                "properties": {
+                    "country": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "feel_like_algo": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "lang": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "pressureunit": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "reg_locale": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "unit": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "windunit": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAUserResponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_exec": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_server": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAWelcomeCameras": {
+                "type": "object",
+                "properties": {
+                    "alim_status": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "is_local": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "sd_status": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "vpn_url": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAWelcomeEvents": {
+                "type": "object",
+                "properties": {
+                    "camera_id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "is_arrival": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "message": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "person_id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "sub_type": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "video_id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "video_status": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAWelcomeEventsData": {
+                "type": "object",
+                "properties": {
+                    "events_list": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAWelcomeEventsResponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_exec": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_server": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAWelcomeFace": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "key": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAWelcomeGlobalInfo": {
+                "type": "object",
+                "properties": {
+                    "show_tags": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAWelcomeHomeData": {
+                "type": "object",
+                "properties": {
+                    "homes": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAWelcomeHomeDataResponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_exec": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_server": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAWelcomeHomes": {
+                "type": "object",
+                "properties": {
+                    "cameras": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "events": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "modules": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "persons": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAWelcomeModules": {
+                "type": "object",
+                "properties": {
+                    "battery_percent": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "last_activity": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "rf": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAWelcomePersons": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "last_seen": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "out_of_sight": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "pseudo": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAWelcomePersonsAwayResponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_exec": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_server": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAWelcomePlace": {
+                "type": "object",
+                "properties": {
+                    "city": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "country": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "timezone": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAWelcomeSnapshot": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "key": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAWelcomeUser": {
+                "type": "object",
+                "properties": {
+                    "lang": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "reg_locale": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAWelcomeWebhookResponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "time_exec": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAYearMonth": {
+                "type": "object",
+                "properties": {
+                    "m": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "y": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "NAZone": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "temp": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            }
+        }
+    }
+}
