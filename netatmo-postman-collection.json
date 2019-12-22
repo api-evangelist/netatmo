@@ -1,5 +1,5 @@
 {
-    "id": "ff07a60bc4260e037fbe051bafb4860d",
+    "id": "7b444b069a35ad4ca2a838412170fd78",
     "name": "Netatmo",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "a8e86e410c57be724df86fd0feeeaab5",
+            "id": "5469e19d1b390f2fb47a319ad6b87d6e",
             "name": "Get Addwebhook",
             "url": "httpsapi.netatmo.net\/api\/addwebhook",
             "description": "Links a callback url to a user.\n",
@@ -44,11 +44,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "collectionId": "7b444b069a35ad4ca2a838412170fd78",
             "rawModeData": ""
         },
         {
-            "id": "56eab4fa42d5524ffe2c47329fb2ad31",
+            "id": "2532567e84eb93aff377e2a697d971af",
             "name": "Post Createnewschedule",
             "url": "httpsapi.netatmo.net\/api\/createnewschedule",
             "description": "The method createnewschedule creates a new schedule stored in the backup list.",
@@ -89,11 +89,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "collectionId": "7b444b069a35ad4ca2a838412170fd78",
             "rawModeData": ""
         },
         {
-            "id": "210f8c0947a5f8de398d4b63ed6f48b6",
+            "id": "41f5cabd4e52ed73f27fd4554665e7cb",
             "name": "Get Devicelist",
             "url": "httpsapi.netatmo.net\/api\/devicelist",
             "description": "The method devicelist returns the list of devices owned by the user, and their modules.\nA device is identified by its _id (which is its mac address) and each device may have one, several or no modules, also identified by an _id.\n",
@@ -134,11 +134,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "collectionId": "7b444b069a35ad4ca2a838412170fd78",
             "rawModeData": ""
         },
         {
-            "id": "28a4539b512a9204f32914e07a76d5a5",
+            "id": "cc7838c3ebcf79bb18fbc27a8ef370d3",
             "name": "Get Dropwebhook",
             "url": "httpsapi.netatmo.net\/api\/dropwebhook",
             "description": "Dissociates a webhook from a user.\n",
@@ -165,11 +165,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "collectionId": "7b444b069a35ad4ca2a838412170fd78",
             "rawModeData": ""
         },
         {
-            "id": "3bf1e75681e4a99e2bd50b6eab9555a1",
+            "id": "b4332fd55fc52fc37468a47af0854731",
             "name": "Get Getcamerapicture",
             "url": "httpsapi.netatmo.net\/api\/getcamerapicture",
             "description": "Returns the snapshot associated to an event.\n",
@@ -203,11 +203,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "collectionId": "7b444b069a35ad4ca2a838412170fd78",
             "rawModeData": ""
         },
         {
-            "id": "c9d22d423268e879814b6d5af7fca90d",
+            "id": "3047f9a14a9169db67e1db818b2886d7",
             "name": "Get Geteventsuntil",
             "url": "httpsapi.netatmo.net\/api\/geteventsuntil",
             "description": "Returns the snapshot associated to an event.\n",
@@ -241,11 +241,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "collectionId": "7b444b069a35ad4ca2a838412170fd78",
             "rawModeData": ""
         },
         {
-            "id": "68b4410aa35d33b7d79757c57b049df2",
+            "id": "67aad32d100898f5ad08d1c26c22b1db",
             "name": "Get Gethomecoachsdata",
             "url": "httpsapi.netatmo.net\/api\/gethomecoachsdata",
             "description": "The method gethomecoachsdata Returns data from a user Healthy Home Coach Station (measures and device specific data).",
@@ -272,11 +272,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "collectionId": "7b444b069a35ad4ca2a838412170fd78",
             "rawModeData": ""
         },
         {
-            "id": "307ecfda8f2db35d72dbbcc12497244a",
+            "id": "bd75fb352ddfdec7e0f5b5ee59ac7f63",
             "name": "Get Gethomedata",
             "url": "httpsapi.netatmo.net\/api\/gethomedata",
             "description": "Returns information about users homes and cameras.\n",
@@ -310,11 +310,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "collectionId": "7b444b069a35ad4ca2a838412170fd78",
             "rawModeData": ""
         },
         {
-            "id": "b1c96f5cfd8f7a0a19e2b7fa28d2c023",
+            "id": "2c62f75213cdc77d1fb575754fd89b51",
             "name": "Get Getlasteventof",
             "url": "httpsapi.netatmo.net\/api\/getlasteventof",
             "description": "Returns most recent events.\n",
@@ -355,11 +355,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "collectionId": "7b444b069a35ad4ca2a838412170fd78",
             "rawModeData": ""
         },
         {
-            "id": "5530ddf56f069fab33562aa70d2ae9d6",
+            "id": "7cf9a45aca868f434be84d601985d9e0",
             "name": "Get Getmeasure",
             "url": "httpsapi.netatmo.net\/api\/getmeasure",
             "description": "The method getmeasure returns the measurements of a device or a module.\n",
@@ -442,11 +442,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "collectionId": "7b444b069a35ad4ca2a838412170fd78",
             "rawModeData": ""
         },
         {
-            "id": "871221100d758efc9ee91bd5cb43150c",
+            "id": "d285bbeed196e7c604138be35a0b9613",
             "name": "Get Getnextevents",
             "url": "httpsapi.netatmo.net\/api\/getnextevents",
             "description": "Returns previous events.\n",
@@ -487,11 +487,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "collectionId": "7b444b069a35ad4ca2a838412170fd78",
             "rawModeData": ""
         },
         {
-            "id": "b50704eb277c4beb2c5233260e1fbc66",
+            "id": "56d07d2844decb349ba52af982d33286",
             "name": "Get Getstationsdata",
             "url": "httpsapi.netatmo.net\/api\/getstationsdata",
             "description": "The method getstationsdata Returns data from a user Weather Stations (measures and device specific data).",
@@ -518,11 +518,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "collectionId": "7b444b069a35ad4ca2a838412170fd78",
             "rawModeData": ""
         },
         {
-            "id": "77196aef42b84a091fd08d2d1931f9ab",
+            "id": "edfbecfa5b57c9a6a27f76e8745ac8b2",
             "name": "Get Getthermostatsdata",
             "url": "httpsapi.netatmo.net\/api\/getthermostatsdata",
             "description": "The method getthermostatsdata returns information about user's thermostats such as their last measurements.",
@@ -549,11 +549,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "collectionId": "7b444b069a35ad4ca2a838412170fd78",
             "rawModeData": ""
         },
         {
-            "id": "366094ae4084822cd2961bb5d52ff5c9",
+            "id": "46e7534295eb6025790f0a3914ce4655",
             "name": "Get Getthermstate",
             "url": "httpsapi.netatmo.net\/api\/getthermstate",
             "description": "The method getthermstate returns the last Thermostat measurements, its current weekly schedule, and, if present, its current manual temperature setpoint.",
@@ -587,11 +587,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "collectionId": "7b444b069a35ad4ca2a838412170fd78",
             "rawModeData": ""
         },
         {
-            "id": "9aaeb6b499d4ec37564fcc59aba2d051",
+            "id": "00c9850996495f90d78401e9605d93a2",
             "name": "Get Getuser",
             "url": "httpsapi.netatmo.net\/api\/getuser",
             "description": "The method getuser returns information about a user such as prefered language, prefered units, and list of devices.\n",
@@ -610,11 +610,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "collectionId": "7b444b069a35ad4ca2a838412170fd78",
             "rawModeData": ""
         },
         {
-            "id": "cb7f94f8b8b96f566627d94992dc52f1",
+            "id": "8bb1921bb58dd079bf9408860eba247d",
             "name": "Get Partnerdevices",
             "url": "httpsapi.netatmo.net\/api\/partnerdevices",
             "description": "The method partnerdevices returns the list of device_id to which your partner application has access to.",
@@ -633,11 +633,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "collectionId": "7b444b069a35ad4ca2a838412170fd78",
             "rawModeData": ""
         },
         {
-            "id": "d57c752da05dcb7e7d4ad24cef64cfd7",
+            "id": "8269f9661bbf4c337f92b3b5e5b48af2",
             "name": "Get Setpersonsaway",
             "url": "httpsapi.netatmo.net\/api\/setpersonsaway",
             "description": "Sets a person as 'Away' or the Home as 'Empty'. The event will be added to the user???s timeline.\n",
@@ -671,11 +671,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "collectionId": "7b444b069a35ad4ca2a838412170fd78",
             "rawModeData": ""
         },
         {
-            "id": "4c126221506d8d86d9487a58b8abffb2",
+            "id": "1e070c44d58dbb61aa075cd26859f5f8",
             "name": "Post Setthermpoint",
             "url": "httpsapi.netatmo.net\/api\/setthermpoint",
             "description": "The method setthermpoint changes the Thermostat manual temperature setpoint.",
@@ -730,11 +730,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "collectionId": "7b444b069a35ad4ca2a838412170fd78",
             "rawModeData": ""
         },
         {
-            "id": "aac2b7f2ca8a21d0587d64856c1cbc1f",
+            "id": "3d2a2726127bf82eecd23a77a5ec3582",
             "name": "Post Switchschedule",
             "url": "httpsapi.netatmo.net\/api\/switchschedule",
             "description": "The method switchschedule switches the Thermostat's schedule to another existing schedule.",
@@ -775,11 +775,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "collectionId": "7b444b069a35ad4ca2a838412170fd78",
             "rawModeData": ""
         },
         {
-            "id": "00a2562d5573b6a78885e46c706e35bd",
+            "id": "ae3028e4a041975cc9ab71683d5af1b6",
             "name": "Post Syncschedule",
             "url": "httpsapi.netatmo.net\/api\/syncschedule",
             "description": "The method syncschedule changes the Thermostat weekly schedule.",
@@ -820,7 +820,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff07a60bc4260e037fbe051bafb4860d",
+            "collectionId": "7b444b069a35ad4ca2a838412170fd78",
             "rawModeData": ""
         }
     ]
